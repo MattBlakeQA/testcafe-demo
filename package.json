@@ -1,0 +1,31 @@
+{
+	"name": "TestCafe",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test:chrome": "testcafe chrome ./tests -s takeOnFails=true --reporter html:./reports/report.html",
+		"test:chrome:parallel": "testcafe -c 5 chrome ./tests -s takeOnFails=true",
+		"test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true",
+		"test:chrome:parallel:headless": "testcafe -c 5 chrome:headless ./tests -s takeOnFails=true",
+		"test:chrome:mobile": "testcafe chrome:emulation:device=iPhone X ./tests -s takeOnFails=true",
+		"test:firefox": "testcafe firefox ./tests -s takeOnFails=true",
+		"test:safari": "testcafe safari ./tests -s takeOnFails=true --disable-page-caching",
+		"test:multiple:headless": "testcafe chrome:headless,firefox:headless ./tests -s takeOnFails=true --reporter html:./reports/report.html"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"testcafe": "^1.8.1",
+		"xpath-to-css": "^1.0.4"
+	},
+	"dependencies": {
+		"prettier": "^1.19.1",
+		"testcafe-reporter-html": "^1.4.5",
+		"testcafe-reporter-json": "^2.2.0",
+		"testcafe-reporter-list": "^2.1.0",
+		"testcafe-reporter-nunit": "^0.1.2",
+		"testcafe-reporter-xunit": "^2.1.0"
+	}
+}
